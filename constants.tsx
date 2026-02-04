@@ -6,9 +6,9 @@ export const PRODUCTS: Product[] = [
     title: 'Isometric style prompts.',
     price: 5.00,
     // Replace with your Roman Camp image URL
-    image: './assets/images/card_img.jfif', 
+    image: '/assets/images/card_img.jfif', 
     // Replace with your Samurai Temple image URL
-    modalImage: './assets/images/board_img.jfif',
+    modalImage: '/assets/images/board_img.jfif',
     iconName: 'box',
     gradient: 'from-orange-400 to-pink-500',
     category: 'AI Arts',
