@@ -98,7 +98,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Footer Links */}
-                <div className="pb-8 w-full flex justify-center">
+                <div className="pb-32 md:pb-8 w-full flex justify-center">
                     <div className="flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium tracking-wide">
                         <button onClick={() => setActiveLegalDoc('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
                         <button onClick={() => setActiveLegalDoc('refund')} className="hover:text-white transition-colors">Refund Policy</button>

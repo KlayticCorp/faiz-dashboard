@@ -166,7 +166,7 @@ const AboutView: React.FC<AboutViewProps> = ({ onOpenLegal }) => {
         
         <ContactButton />
 
-        <div className="mt-24 pb-8 flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium tracking-wide">
+        <div className="mt-24 pb-32 md:pb-8 flex flex-wrap justify-center gap-8 text-sm text-gray-500 font-medium tracking-wide">
            <button onClick={() => onOpenLegal('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
            <button onClick={() => onOpenLegal('refund')} className="hover:text-white transition-colors">Refund Policy</button>
            <button onClick={() => onOpenLegal('terms')} className="hover:text-white transition-colors">Terms & Conditions</button>
@@ -217,7 +217,7 @@ const ScrollToTopButton = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-[#1C1C1E]/80 backdrop-blur-xl border border-white/10 shadow-2xl text-white hover:bg-[#2C2C2E] transition-all flex items-center justify-center cursor-pointer"
+            className="fixed bottom-28 md:bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-[#1C1C1E]/80 backdrop-blur-xl border border-white/10 shadow-2xl text-white hover:bg-[#2C2C2E] transition-all flex items-center justify-center cursor-pointer"
           >
             <ArrowUp size={24} />
           </motion.button>

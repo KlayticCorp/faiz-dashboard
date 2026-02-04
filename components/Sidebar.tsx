@@ -10,19 +10,30 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => {
   return (
     <motion.aside 
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="hidden md:flex flex-col items-center fixed left-8 top-1/2 -translate-y-1/2 z-30"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed z-40 flex items-center justify-center
+        bottom-6 left-1/2 -translate-x-1/2 
+        md:bottom-auto md:left-8 md:top-1/2 md:translate-x-0 md:-translate-y-1/2"
     >
-      <div className="glass-panel p-2 rounded-full shadow-2xl flex flex-col items-center gap-4">
+      <div className="glass-panel rounded-full shadow-2xl flex items-center justify-center
+        flex-row p-3 gap-6
+        md:flex-col md:p-2 md:gap-4"
+      >
         <NavItem 
           icon={<Home size={22} />} 
           label="Store"
           active={currentView === 'store'} 
           onClick={() => onNavigate('store')}
         />
-        <div className="w-6 h-[1px] bg-white/10" />
+        
+        {/* Separator */}
+        <div className="bg-white/10
+          w-[1px] h-6
+          md:w-6 md:h-[1px]" 
+        />
+        
         <NavItem 
           icon={<User size={22} />} 
           label="About"
@@ -46,7 +57,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, active, onClick, label }) => (
     onClick={onClick}
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.95 }}
-    className="relative group p-4 rounded-full flex items-center justify-center"
+    className="relative group p-3 md:p-4 rounded-full flex items-center justify-center"
   >
     <div className={`transition-colors duration-300 ${
       active ? 'text-white' : 'text-gray-500 group-hover:text-gray-300'
@@ -54,8 +65,8 @@ const NavItem: React.FC<NavItemProps> = ({ icon, active, onClick, label }) => (
       {icon}
     </div>
     
-    {/* Tooltip */}
-    <span className="absolute left-full ml-4 px-3 py-1 bg-white text-black text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+    {/* Tooltip - Desktop only */}
+    <span className="hidden md:block absolute left-full ml-4 px-3 py-1 bg-white text-black text-xs font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
       {label}
     </span>
   </motion.button>
